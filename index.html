@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>DiceyDealings - Part 1</title>
+  </head>
+  <body>
+    <div id="game-container-main">
+      <div id="game-selector">
+        <h1>DiceyDealings</h1>
+
+        <p>Select your game style:</p>
+
+        <button id="one-player">1P</button>
+        <button id="two-player">2P</button>
+      </div>
+
+      <div id="game-container-one" class="hide">
+        <h1>DiceyDealings - Part 1</h1>
+
+        <p>Try your luck...Score 21 or over to win...Roll a 1 any time and you lose...</p>
+      </div>
+
+      <div id="game-container-two" class="hide">
+        <h1>DiceyDealings - Part 2</h1>
+
+        <p>
+          Battle Each Other
+          <br>
+          Player 1 Rolls First
+          <br>
+          Player 1 Can Hold Score At 15 Or Over
+          <br>
+          Scores Over 21 Auto Holds And Ends Turn
+          <br>
+          Rolling A 1 Clears Score And Ends Turn
+        </p>
+      </div>
+
+      <div id="game-board">
+        <div id="score-container"></div>
+        <div id="message"></div>
+        <div id="holding" class="hide">Player 1 Holding Score</div>
+        <div id="dice"><img id="dice-img" src="images/dice/dice1.png" alt="Dice" class="hide" /></div>
+        <button id="roll" onClick="playGame()" class="hide">ROLL</button>
+        <button id="retry" onClick="resetGame()" class="hide">RESET GAME</button>
+        <button id="hold" onClick="hold()" class="hide">HOLD SCORE</button>
+      </div>
+
+      <audio id="dice-roll" src="sounds/diceroll.wav"></audio>
+      <audio id="win" src="sounds/win.wav"></audio>
+      <audio id="lose" src="sounds/lose.wav"></audio>
+
+      <img id="made-by" src="images/andyjacko.png" alt="Andy Jacko" />
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

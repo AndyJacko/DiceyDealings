@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-image: url("images/casino.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 16px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #aa0000;
+}
+
+p {
+  margin: 10px;
+  font-size: 8px;
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 20px;
+  font-weight: bold;
+  background: #ffff00;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ffffff;
+}
+
+#game-container-main {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  background: #000000dd;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #747474;
+}
+#game-container-one,
+#game-container-two {
+  padding: 20px;
+}
+
+#score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score,
+#message {
+  margin: 10px;
+  font-size: 25px;
+}
+
+#dice img {
+  width: 50px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #cccccc;
+}
+
+#made-by {
+  margin-top: 50px;
+  width: 100px;
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .score,
+  #message {
+    font-size: 45px;
+  }
+
+  #dice img {
+    width: 70px;
+  }
+
+  #made-by {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .score,
+  #message {
+    font-size: 65px;
+  }
+
+  #dice img {
+    width: 100px;
+  }
+
+  #made-by {
+    width: 200px;
+  }
+}
