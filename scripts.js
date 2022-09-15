@@ -1,10 +1,13 @@
 const gameSelector = document.getElementById("game-selector");
+const newGameSelector = document.getElementById("new-game");
+
 const oneP = document.getElementById("one-player");
 const twoP = document.getElementById("two-player");
 const onePGame = document.getElementById("game-container-one");
 const twoPGame = document.getElementById("game-container-two");
-const gameBoard = document.getElementById("game-board");
+
 const scoreContainer = document.getElementById("score-container");
+
 const holdEl = document.getElementById("hold");
 const holdingEl = document.getElementById("holding");
 
@@ -22,10 +25,28 @@ let p2score = 0;
 let holding = 0;
 let gameType;
 
+const newGame = () => {
+  resetGame();
+  onePGame.classList.add("hide");
+  twoPGame.classList.add("hide");
+  roll.classList.add("hide");
+  newGameSelector.classList.add("hide");
+  gameSelector.classList.remove("hide");
+
+  if (gameType === 1) {
+    const el = document.getElementById("one-player-score");
+    scoreContainer.removeChild(el);
+  } else {
+    const el1 = document.getElementById("player-one-score");
+    const el2 = document.getElementById("player-two-score");
+    scoreContainer.removeChild(el1);
+    scoreContainer.removeChild(el2);
+  }
+};
+
 const whoWins = () => {
   if (p1score === p2score) {
     message.textContent = "ITS A DRAW";
-    message.style.color = "red";
 
     lose.pause();
     lose.currentTime = 0;
@@ -37,8 +58,6 @@ const whoWins = () => {
       message.textContent = "PLAYER 2 WINS";
     }
 
-    message.style.color = "green";
-
     win.pause();
     win.currentTime = 0;
     win.play();
@@ -48,6 +67,7 @@ const whoWins = () => {
   holdingEl.classList.add("hide");
   message.classList.remove("hide");
   retry.classList.remove("hide");
+  newGameSelector.classList.remove("hide");
 };
 
 const calculateScore = (num) => {
@@ -55,9 +75,9 @@ const calculateScore = (num) => {
     if (num === 1) {
       roll.classList.add("hide");
       message.textContent = "YOU LOSE!";
-      message.style.color = "red";
       message.classList.remove("hide");
       retry.classList.remove("hide");
+      newGameSelector.classList.remove("hide");
 
       lose.pause();
       lose.currentTime = 0;
@@ -66,9 +86,9 @@ const calculateScore = (num) => {
       if (p1score >= 21) {
         roll.classList.add("hide");
         message.textContent = "YOU WIN!";
-        message.style.color = "green";
         message.classList.remove("hide");
         retry.classList.remove("hide");
+        newGameSelector.classList.remove("hide");
 
         win.pause();
         win.currentTime = 0;
@@ -135,17 +155,19 @@ const resetGame = () => {
   message.classList.add("hide");
   holdingEl.classList.add("hide");
   retry.classList.add("hide");
+  newGameSelector.classList.add("hide");
   roll.classList.remove("hide");
   dice.src = `./images/dice/dice1.png`;
 };
 
 const rollDice = (p, el) => {
-  // const num = Math.ceil(Math.random() * 6);
-  const num = 6;
+  const num = Math.ceil(Math.random() * 6);
   const scoreEl = document.querySelector(el);
   const interval = setInterval(() => {
     dice.src = `./images/dice/dice${Math.ceil(Math.random() * 6)}.png`;
   }, 100);
+
+  holdEl.classList.add("hide");
 
   diceroll.pause();
   diceroll.currentTime = 0;
@@ -203,7 +225,7 @@ twoP.addEventListener("click", () => {
   const PlayerOneScore = document.createElement("p");
   pOneScore.id = "player-one-score";
   pOneScore.style.margin = "0 30px";
-  PlayerOne.textContent = "Player 1";
+  PlayerOne.textContent = "PLAYER 1";
   PlayerOneScore.textContent = "0";
   PlayerOneScore.classList.add("score");
 
@@ -215,7 +237,7 @@ twoP.addEventListener("click", () => {
   const PlayerTwoScore = document.createElement("p");
   pTwoScore.id = "player-two-score";
   pTwoScore.style.margin = "0 30px";
-  PlayerTwo.textContent = "Player 2";
+  PlayerTwo.textContent = "PLAYER 2";
   PlayerTwoScore.textContent = "0";
   PlayerTwoScore.classList.add("score");
 

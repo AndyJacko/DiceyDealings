@@ -12,7 +12,7 @@
       <div id="game-selector">
         <h1>DiceyDealings</h1>
 
-        <p>Select your game style:</p>
+        <p>Select Your Game Style:</p>
 
         <button id="one-player">1P</button>
         <button id="two-player">2P</button>
@@ -21,7 +21,13 @@
       <div id="game-container-one" class="hide">
         <h1>DiceyDealings - Part 1</h1>
 
-        <p>Try your luck...Score 21 or over to win...Roll a 1 any time and you lose...</p>
+        <p>
+          Try Your Luck
+          <br>
+          Score 21 Or Over To Win
+          <br>
+          Roll A 1 And You Lose
+        </p>
       </div>
 
       <div id="game-container-two" class="hide">
@@ -30,9 +36,9 @@
         <p>
           Battle Each Other
           <br>
-          Player 1 Rolls First
+          PLAYER 1 Rolls First
           <br>
-          Player 1 Can Hold Score At 15 Or Over
+          PLAYER 1 Can Hold Score At 15 Or Over
           <br>
           Scores Over 21 Auto Holds And Ends Turn
           <br>
@@ -43,10 +49,11 @@
       <div id="game-board">
         <div id="score-container"></div>
         <div id="message"></div>
-        <div id="holding" class="hide">Player 1 Holding Score</div>
+        <div id="holding" class="hide">PLAYER 1 Holding Score</div>
         <div id="dice"><img id="dice-img" src="images/dice/dice1.png" alt="Dice" class="hide" /></div>
         <button id="roll" onClick="playGame()" class="hide">ROLL</button>
         <button id="retry" onClick="resetGame()" class="hide">RESET GAME</button>
+        <button id="new-game" onClick="newGame()" class="hide">CHOOSE NEW GAME TYPE</button>
         <button id="hold" onClick="hold()" class="hide">HOLD SCORE</button>
       </div>
 
